@@ -1,0 +1,30 @@
+
+
+
+
+syntax = "proto3";
+
+package sensordata;
+
+message AnalogData {
+  int32 channelType = 1;
+  int32 channelID = 2;
+  uint64 timestamp = 3;
+  int32 counter = 4;
+  float data = 5;
+}
+
+message DigitalData {
+  int32 channelType = 1;
+  int32 cardID = 2;
+  uint64 timestamp = 3;
+  int32 counter = 4;
+  repeated bool data = 5;
+}
+
+message SensorData {
+  oneof payload {
+    AnalogData analog = 1;
+    DigitalData digital = 2;
+  }
+}
