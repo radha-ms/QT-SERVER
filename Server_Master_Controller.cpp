@@ -120,7 +120,7 @@ void Server_Master_Controller::onConfigLoaded(QString data, int flag) {
             for (auto it = samplingRateGroups.begin(); it != samplingRateGroups.end(); ++it) {
                 int samplingRate = it.key();
 
-//                if(samplingRate == AnalogOutputTopic.maximum_sampling_rate || samplingRate == AnalogOutputTopic.minimum_sampling_rate){
+                //                if(samplingRate == AnalogOutputTopic.maximum_sampling_rate || samplingRate == AnalogOutputTopic.minimum_sampling_rate){
                 if (samplingRate >= AnalogOutputTopic.minimum_sampling_rate && samplingRate <= AnalogOutputTopic.maximum_sampling_rate){
 
                     QList<int> channelIDs = it.value();
@@ -226,29 +226,29 @@ void Server_Master_Controller::onConfigLoaded(QString data, int flag) {
 
 
 
-        QThread::msleep(1000);
+        //        QThread::msleep(1000);
         /******************************************TESTING PUROPSE************************************************/
-                            QHostAddress IP = QHostAddress("192.168.2.109");
-                            Client_Handler *client  = new Client_Handler(IP, 55668);
+        //                            QHostAddress IP = QHostAddress("192.168.2.109");
+        //                            Client_Handler *client  = new Client_Handler(IP, 55668);
         /*********************************************************************************************************/
 
-//                            //create thread object
-//                            QThread *consumer_Thread = new QThread;
+        //                            //create thread object
+        //                            QThread *consumer_Thread = new QThread;
 
-//                            //Creating Kafka_Producer_Handler object to initiate that class for analog topics
-//                            Temp_Consumer *worker = new Temp_Consumer("TOPIC_A_500_1000","192.168.2.109:9092");
+        //                            //Creating Kafka_Producer_Handler object to initiate that class for analog topics
+        //                            Temp_Consumer *worker = new Temp_Consumer("TOPIC_A_500_1000","192.168.2.109:9092");
 
-//                            //assing the object to the thread
-//                            worker->moveToThread(consumer_Thread);
+        //                            //assing the object to the thread
+        //                            worker->moveToThread(consumer_Thread);
 
-//                            //Init signal slots for thread saftey
-//                            connect(consumer_Thread, &QThread::started, worker, &Temp_Consumer::startConsumer);
-//                            connect(worker, &Temp_Consumer::finished, consumer_Thread, &QThread::quit);
-//                            connect(worker, &Temp_Consumer::finished, worker, &QObject::deleteLater);
-//                            connect(consumer_Thread, &QThread::finished, consumer_Thread, &QObject::deleteLater);
+        //                            //Init signal slots for thread saftey
+        //                            connect(consumer_Thread, &QThread::started, worker, &Temp_Consumer::startConsumer);
+        //                            connect(worker, &Temp_Consumer::finished, consumer_Thread, &QThread::quit);
+        //                            connect(worker, &Temp_Consumer::finished, worker, &QObject::deleteLater);
+        //                            connect(consumer_Thread, &QThread::finished, consumer_Thread, &QObject::deleteLater);
 
-//                            //start the thread
-//                            consumer_Thread->start();
+        //                            //start the thread
+        //                            consumer_Thread->start();
 
     }else {
         //log the error message into the log file
@@ -280,32 +280,37 @@ void Server_Master_Controller::HandleKafkaReceivedData(QJsonObject Command){
         qDebug()<<"entered case key is "<<key;
         if(acq==1){
             STATUS sendtoClient;
-            sendtoClient.startAcq = acq;
-
+            sendtoClient.startAcq = 1;
+            qRegisterMetaType<STATUS>("STATUS");
             //Emit the signal to send Command to the client socket
-//            emit sendDataToSocket(sendtoClient);
-            Initialize_Config->getInstance().setAcqFlag(1);
+            emit sendDataToSocket(sendtoClient);
+//            Initialize_Config->getInstance().setAcqFlag(1);
+            QJsonObject sendData;
+            sendData["key"]=1001;
+            sendData["startAcq"]=1;
+            sendData["command"]="startAcq command is received";
+            emit sendDataToKafka(sendData);
         }else if (acq==0) {
             STATUS sendtoClient;
             sendtoClient.startAcq =acq;
-
+            qRegisterMetaType<STATUS>("STATUS");
             //Emit the signal to send Command to the client socket
-//            emit sendDataToSocket(sendtoClient);
-              Initialize_Config->getInstance().setAcqFlag(0);
+            emit sendDataToSocket(sendtoClient);
+            Initialize_Config->getInstance().setAcqFlag(0);
         }
         break;
 
         //key 2000 is for readyfor acq and not readyfor acq
     case 2001:
         qDebug()<<"entered case key is "<<key;
-
+        qDebug()<<"received acknowledge from kafka command "<<command;
         activityLog<<"received ack for readyForAcq from kafka "<<command;
         break;
 
         //key 2000 is for not readyfor acq and not readyfor acq
     case 3001:
         qDebug()<<"entered case key is "<<key;
-
+        qDebug()<<"received acknowledge from kafka command "<<command;
         activityLog<<"received ack for not readyForAcq from kafka "<<command;
         break;
 
@@ -324,38 +329,28 @@ void Server_Master_Controller::HandleKafkaReceivedData(QJsonObject Command){
 void Server_Master_Controller::UpdateSocketReceivedData(int Command){
 
     qDebug()<<Command <<"all client is ready for acq flag received from client communication handler";
-    //    if(Command==1){
-    //        QJsonObject json;
-    //        json["key"] = 2000;
-    //        json["readyForAcq"] = Command;
-    //        json["command"] = "Server and Clients are setup is ready waiting for Start ACQ";
-    //        //Emit the signal to send Command to the kafka server
-    //        emit sendDataToKafka(json);
-    //    }else if(Command == 0){
-    //        QJsonObject json;
-    //        json["key"] = 2000;
-    //        json["readyForAcq"] = Command;
-    //        json["command"] = "DACS client or server setup is not ready cannot start the ACQ";
-    //        //Emit the signal to send Command to the kafka server
-    //        emit sendDataToKafka(json);
-    //     }else if(Command == 2){
-    //        QJsonObject json;
-    //        json["key"] = 3000;
-    //        json["readyForAcq"] = Command;
-    //        json["command"] = "cannot start the tcp server for Initial communication with clients don't start the ACQ";
-    //        //Emit the signal to send Command to the kafka server
-    //        emit sendDataToKafka(json);
-    //     }
-
-
-    QJsonObject json;
-    json["key"]=1000;
-    json["acquisitionFlag"]=1;
-    emit sendDataToKafka(json);
-
-
-
-
+    if(Command==1){
+        QJsonObject json;
+        json["key"] = 2000;
+        json["readyForAcq"] = Command;
+        json["command"] = "Server and Clients are setup is ready waiting for Start ACQ";
+        //Emit the signal to send Command to the kafka server
+        emit sendDataToKafka(json);
+    }else if(Command == 0){
+        QJsonObject json;
+        json["key"] = 2000;
+        json["readyForAcq"] = Command;
+        json["command"] = "DAQ client setup was failure cannot start the ACQ / DACS client or server setup is not ready cannot start the ACQ";
+        //Emit the signal to send Command to the kafka server
+        emit sendDataToKafka(json);
+    }else if(Command == 2){
+        QJsonObject json;
+        json["key"] = 3000;
+        json["readyForAcq"] = Command;
+        json["command"] = "cannot start the tcp server for Initial communication with clients don't start the ACQ";
+        //Emit the signal to send Command to the kafka server
+        emit sendDataToKafka(json);
+    }
 }
 
 

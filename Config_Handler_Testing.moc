@@ -1,0 +1,608 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'Config_Handler_Testing.cpp'
+**
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.12.4)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'Config_Handler_Testing.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.12.4. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+struct qt_meta_stringdata_Config_Handler_test_t {
+    QByteArrayData data[102];
+    char stringdata0[3348];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    qptrdiff(offsetof(qt_meta_stringdata_Config_Handler_test_t, stringdata0) + ofs \
+        - idx * sizeof(QByteArrayData)) \
+    )
+static const qt_meta_stringdata_Config_Handler_test_t qt_meta_stringdata_Config_Handler_test = {
+    {
+QT_MOC_LITERAL(0, 0, 19), // "Config_Handler_test"
+QT_MOC_LITERAL(1, 20, 20), // "valid_serverfilepath"
+QT_MOC_LITERAL(2, 41, 0), // ""
+QT_MOC_LITERAL(3, 42, 22), // "Invalid_serverFilepath"
+QT_MOC_LITERAL(4, 65, 19), // "valid_kafkafilepath"
+QT_MOC_LITERAL(5, 85, 21), // "Invalid_kafkafilepath"
+QT_MOC_LITERAL(6, 107, 22), // "Logger_section_Missing"
+QT_MOC_LITERAL(7, 130, 27), // "Check_Log_Level_key_Missing"
+QT_MOC_LITERAL(8, 158, 29), // "Check_Log_Level_value_IsEmpty"
+QT_MOC_LITERAL(9, 188, 31), // "Check_Log_Level_value_is_String"
+QT_MOC_LITERAL(10, 220, 30), // "Check_Log_Level_value_is_float"
+QT_MOC_LITERAL(11, 251, 31), // "Check_Log_Level_value_is_double"
+QT_MOC_LITERAL(12, 283, 33), // "Check_Log_Level_value_is_nega..."
+QT_MOC_LITERAL(13, 317, 22), // "Server_section_Missing"
+QT_MOC_LITERAL(14, 340, 26), // "Check_serverIp_key_Missing"
+QT_MOC_LITERAL(15, 367, 28), // "Check_serverPort_key_Missing"
+QT_MOC_LITERAL(16, 396, 29), // "Check_serverIp_value_is_Empty"
+QT_MOC_LITERAL(17, 426, 30), // "Check_serverIp_value_is_String"
+QT_MOC_LITERAL(18, 457, 36), // "Check_serverIp_value_is_Inval..."
+QT_MOC_LITERAL(19, 494, 38), // "Chcek_serverIp_value_is_valid..."
+QT_MOC_LITERAL(20, 533, 31), // "Check_serverPort_value_is_Empty"
+QT_MOC_LITERAL(21, 565, 32), // "Check_serverPort_value_is_String"
+QT_MOC_LITERAL(22, 598, 31), // "Check_serverPort_value_is_float"
+QT_MOC_LITERAL(23, 630, 32), // "Check_serverPort_value_is_double"
+QT_MOC_LITERAL(24, 663, 37), // "Check_serverPort_Crossed_Max_..."
+QT_MOC_LITERAL(25, 701, 34), // "Check_serverPort_value_is_neg..."
+QT_MOC_LITERAL(26, 736, 20), // "Test_section_Missing"
+QT_MOC_LITERAL(27, 757, 29), // "Check_RefreshRate_key_Missing"
+QT_MOC_LITERAL(28, 787, 40), // "Check_ChannelID_SamplingRate_..."
+QT_MOC_LITERAL(29, 828, 31), // "check_RefreshRate_value_isEmpty"
+QT_MOC_LITERAL(30, 860, 33), // "Check_RefreshRate_value_is_St..."
+QT_MOC_LITERAL(31, 894, 32), // "Check_RefreshRate_value_is_float"
+QT_MOC_LITERAL(32, 927, 33), // "Check_RefreshRate_value_is_do..."
+QT_MOC_LITERAL(33, 961, 35), // "Check_RefreshRate_Crossed_Max..."
+QT_MOC_LITERAL(34, 997, 35), // "Check_RefreshRate_value_is_ne..."
+QT_MOC_LITERAL(35, 1033, 36), // "Check_ChannelID_SamplingRate_..."
+QT_MOC_LITERAL(36, 1070, 38), // "Check_ChannelID_SamplingRate_..."
+QT_MOC_LITERAL(37, 1109, 38), // "Check_ChannelID_SamplingRate_..."
+QT_MOC_LITERAL(38, 1148, 36), // "Check_ChannelID_SamplingRate_..."
+QT_MOC_LITERAL(39, 1185, 21), // "Kafka_section_Missing"
+QT_MOC_LITERAL(40, 1207, 26), // "Check_KafkaURL_key_Missing"
+QT_MOC_LITERAL(41, 1234, 28), // "Check_Serializer_key_Missing"
+QT_MOC_LITERAL(42, 1263, 33), // "Check_NoOfAnalogTopic_key_Mis..."
+QT_MOC_LITERAL(43, 1297, 34), // "Check_NoOfDigitalTopic_key_Mi..."
+QT_MOC_LITERAL(44, 1332, 28), // "Check_KafkaURL_value_isEmpty"
+QT_MOC_LITERAL(45, 1361, 36), // "Check_KafkaURL_value_isInvali..."
+QT_MOC_LITERAL(46, 1398, 35), // "Check_KafkaIP_value_isInvalid..."
+QT_MOC_LITERAL(47, 1434, 30), // "Check_Kafka_Port_value_isFloat"
+QT_MOC_LITERAL(48, 1465, 31), // "Check_Kafka_port_value_isDouble"
+QT_MOC_LITERAL(49, 1497, 33), // "Check_Kafka_port_value_isNega..."
+QT_MOC_LITERAL(50, 1531, 36), // "Check_Kafka_port_value_isCros..."
+QT_MOC_LITERAL(51, 1568, 38), // "Check_Kafka_port_value_isInva..."
+QT_MOC_LITERAL(52, 1607, 30), // "Check_Serializer_value_isEmpty"
+QT_MOC_LITERAL(53, 1638, 32), // "Check_Serializer_value_isNumeric"
+QT_MOC_LITERAL(54, 1671, 37), // "Check_Serializer_value_contai..."
+QT_MOC_LITERAL(55, 1709, 37), // "Check_Serializer_Value_isNot_..."
+QT_MOC_LITERAL(56, 1747, 35), // "Check_NoOfAnalogtopic_value_i..."
+QT_MOC_LITERAL(57, 1783, 36), // "Check_NoOfAnalogtopic_value_i..."
+QT_MOC_LITERAL(58, 1820, 35), // "Check_NoOfAnalogtopic_value_i..."
+QT_MOC_LITERAL(59, 1856, 36), // "Check_NoOfAnalogtopic_value_i..."
+QT_MOC_LITERAL(60, 1893, 38), // "Check_NoOfAnalogtopic_value_c..."
+QT_MOC_LITERAL(61, 1932, 38), // "Check_NoOfAnalogtopic_value_i..."
+QT_MOC_LITERAL(62, 1971, 36), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(63, 2008, 37), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(64, 2046, 36), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(65, 2083, 37), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(66, 2121, 39), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(67, 2161, 39), // "Check_NoOfDigitalTopic_value_..."
+QT_MOC_LITERAL(68, 2201, 35), // "Communication_topic_section_M..."
+QT_MOC_LITERAL(69, 2237, 28), // "check_Topic_name_key_Missing"
+QT_MOC_LITERAL(70, 2266, 28), // "check_Serializer_key_Missing"
+QT_MOC_LITERAL(71, 2295, 30), // "check_DeSerializer_key_Missing"
+QT_MOC_LITERAL(72, 2326, 30), // "Check_Topic_Name_value_isEmpty"
+QT_MOC_LITERAL(73, 2357, 32), // "Check_Topic_Name_value_isInvalid"
+QT_MOC_LITERAL(74, 2390, 32), // "Check_Topic_Name_value_isNumeric"
+QT_MOC_LITERAL(75, 2423, 35), // "Check_COMM_Serializer_value_i..."
+QT_MOC_LITERAL(76, 2459, 37), // "Check_COMM_Serializer_value_i..."
+QT_MOC_LITERAL(77, 2497, 37), // "Check_COMM_Serializer_value_i..."
+QT_MOC_LITERAL(78, 2535, 37), // "Check_COMM_DeSerializer_value..."
+QT_MOC_LITERAL(79, 2573, 39), // "Check_COMM_DeSerializer_value..."
+QT_MOC_LITERAL(80, 2613, 39), // "Check_COMM_DeSerializer_value..."
+QT_MOC_LITERAL(81, 2653, 28), // "Missing_Analog_Topic_section"
+QT_MOC_LITERAL(82, 2682, 28), // "Check_Topic_Name_key_Missing"
+QT_MOC_LITERAL(83, 2711, 29), // "Check_MinSampling_key_Missing"
+QT_MOC_LITERAL(84, 2741, 29), // "Check_MaxSampling_key_Missing"
+QT_MOC_LITERAL(85, 2771, 35), // "Check_AnalogTopicName_value_i..."
+QT_MOC_LITERAL(86, 2807, 35), // "Check_AnalogMinSample_value_i..."
+QT_MOC_LITERAL(87, 2843, 35), // "Check_AnalogMaxSample_value_i..."
+QT_MOC_LITERAL(88, 2879, 32), // "Check_AnalogTopic_Name_isInvlaid"
+QT_MOC_LITERAL(89, 2912, 32), // "Check_AnalogMinSample_Limitation"
+QT_MOC_LITERAL(90, 2945, 32), // "Check_AnalogMaxSample_Limitation"
+QT_MOC_LITERAL(91, 2978, 40), // "Check_AnalogMaxsample_lessTha..."
+QT_MOC_LITERAL(92, 3019, 32), // "Check_AnalogMinSample_isNegative"
+QT_MOC_LITERAL(93, 3052, 32), // "Check_AnalogMaxSample_isNegative"
+QT_MOC_LITERAL(94, 3085, 29), // "Missing_Digital_Topic_section"
+QT_MOC_LITERAL(95, 3115, 35), // "Check_DigitalTopic_Name_key_M..."
+QT_MOC_LITERAL(96, 3151, 30), // "Check_SamplingRate_key_Missing"
+QT_MOC_LITERAL(97, 3182, 36), // "Check_DigitalTopicName_value_..."
+QT_MOC_LITERAL(98, 3219, 32), // "Check_SamplingRate_value_isEmpty"
+QT_MOC_LITERAL(99, 3252, 33), // "Check_DigitalTopic_Name_isInv..."
+QT_MOC_LITERAL(100, 3286, 30), // "Check_DigitalSample_Limitation"
+QT_MOC_LITERAL(101, 3317, 30) // "Check_DigitalSample_isNegative"
+
+    },
+    "Config_Handler_test\0valid_serverfilepath\0"
+    "\0Invalid_serverFilepath\0valid_kafkafilepath\0"
+    "Invalid_kafkafilepath\0Logger_section_Missing\0"
+    "Check_Log_Level_key_Missing\0"
+    "Check_Log_Level_value_IsEmpty\0"
+    "Check_Log_Level_value_is_String\0"
+    "Check_Log_Level_value_is_float\0"
+    "Check_Log_Level_value_is_double\0"
+    "Check_Log_Level_value_is_negative\0"
+    "Server_section_Missing\0"
+    "Check_serverIp_key_Missing\0"
+    "Check_serverPort_key_Missing\0"
+    "Check_serverIp_value_is_Empty\0"
+    "Check_serverIp_value_is_String\0"
+    "Check_serverIp_value_is_Invalid_Host\0"
+    "Chcek_serverIp_value_is_validHost_Zero\0"
+    "Check_serverPort_value_is_Empty\0"
+    "Check_serverPort_value_is_String\0"
+    "Check_serverPort_value_is_float\0"
+    "Check_serverPort_value_is_double\0"
+    "Check_serverPort_Crossed_Max_TCPRange\0"
+    "Check_serverPort_value_is_negative\0"
+    "Test_section_Missing\0Check_RefreshRate_key_Missing\0"
+    "Check_ChannelID_SamplingRate_key_Missing\0"
+    "check_RefreshRate_value_isEmpty\0"
+    "Check_RefreshRate_value_is_String\0"
+    "Check_RefreshRate_value_is_float\0"
+    "Check_RefreshRate_value_is_double\0"
+    "Check_RefreshRate_Crossed_Max_Range\0"
+    "Check_RefreshRate_value_is_negative\0"
+    "Check_ChannelID_SamplingRate_isEmpty\0"
+    "Check_ChannelID_SamplingRate_malformed\0"
+    "Check_ChannelID_SamplingRate_isInvalid\0"
+    "Check_ChannelID_SamplingRate_isFloat\0"
+    "Kafka_section_Missing\0Check_KafkaURL_key_Missing\0"
+    "Check_Serializer_key_Missing\0"
+    "Check_NoOfAnalogTopic_key_Missing\0"
+    "Check_NoOfDigitalTopic_key_Missing\0"
+    "Check_KafkaURL_value_isEmpty\0"
+    "Check_KafkaURL_value_isInvalidFormat\0"
+    "Check_KafkaIP_value_isInvalidFormat\0"
+    "Check_Kafka_Port_value_isFloat\0"
+    "Check_Kafka_port_value_isDouble\0"
+    "Check_Kafka_port_value_isNegative\0"
+    "Check_Kafka_port_value_isCrossed_Max\0"
+    "Check_Kafka_port_value_isInvalid_Chars\0"
+    "Check_Serializer_value_isEmpty\0"
+    "Check_Serializer_value_isNumeric\0"
+    "Check_Serializer_value_containsSPCHAR\0"
+    "Check_Serializer_Value_isNot_Expected\0"
+    "Check_NoOfAnalogtopic_value_isEmpty\0"
+    "Check_NoOfAnalogtopic_value_isString\0"
+    "Check_NoOfAnalogtopic_value_isFloat\0"
+    "Check_NoOfAnalogtopic_value_isDouble\0"
+    "Check_NoOfAnalogtopic_value_crossedMax\0"
+    "Check_NoOfAnalogtopic_value_isNegative\0"
+    "Check_NoOfDigitalTopic_value_isEmpty\0"
+    "Check_NoOfDigitalTopic_value_isString\0"
+    "Check_NoOfDigitalTopic_value_isFloat\0"
+    "Check_NoOfDigitalTopic_value_isDouble\0"
+    "Check_NoOfDigitalTopic_value_crossedMax\0"
+    "Check_NoOfDigitalTopic_value_isNegative\0"
+    "Communication_topic_section_Missing\0"
+    "check_Topic_name_key_Missing\0"
+    "check_Serializer_key_Missing\0"
+    "check_DeSerializer_key_Missing\0"
+    "Check_Topic_Name_value_isEmpty\0"
+    "Check_Topic_Name_value_isInvalid\0"
+    "Check_Topic_Name_value_isNumeric\0"
+    "Check_COMM_Serializer_value_isEmpty\0"
+    "Check_COMM_Serializer_value_isInvalid\0"
+    "Check_COMM_Serializer_value_isNumeric\0"
+    "Check_COMM_DeSerializer_value_isEmpty\0"
+    "Check_COMM_DeSerializer_value_isInvalid\0"
+    "Check_COMM_DeSerializer_value_isNumeric\0"
+    "Missing_Analog_Topic_section\0"
+    "Check_Topic_Name_key_Missing\0"
+    "Check_MinSampling_key_Missing\0"
+    "Check_MaxSampling_key_Missing\0"
+    "Check_AnalogTopicName_value_isEmpty\0"
+    "Check_AnalogMinSample_value_isEmpty\0"
+    "Check_AnalogMaxSample_value_isEmpty\0"
+    "Check_AnalogTopic_Name_isInvlaid\0"
+    "Check_AnalogMinSample_Limitation\0"
+    "Check_AnalogMaxSample_Limitation\0"
+    "Check_AnalogMaxsample_lessThan_Minsample\0"
+    "Check_AnalogMinSample_isNegative\0"
+    "Check_AnalogMaxSample_isNegative\0"
+    "Missing_Digital_Topic_section\0"
+    "Check_DigitalTopic_Name_key_Missing\0"
+    "Check_SamplingRate_key_Missing\0"
+    "Check_DigitalTopicName_value_isEmpty\0"
+    "Check_SamplingRate_value_isEmpty\0"
+    "Check_DigitalTopic_Name_isInvlaid\0"
+    "Check_DigitalSample_Limitation\0"
+    "Check_DigitalSample_isNegative"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_Config_Handler_test[] = {
+
+ // content:
+       8,       // revision
+       0,       // classname
+       0,    0, // classinfo
+     100,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags
+       1,    0,  514,    2, 0x08 /* Private */,
+       3,    0,  515,    2, 0x08 /* Private */,
+       4,    0,  516,    2, 0x08 /* Private */,
+       5,    0,  517,    2, 0x08 /* Private */,
+       6,    0,  518,    2, 0x08 /* Private */,
+       7,    0,  519,    2, 0x08 /* Private */,
+       8,    0,  520,    2, 0x08 /* Private */,
+       9,    0,  521,    2, 0x08 /* Private */,
+      10,    0,  522,    2, 0x08 /* Private */,
+      11,    0,  523,    2, 0x08 /* Private */,
+      12,    0,  524,    2, 0x08 /* Private */,
+      13,    0,  525,    2, 0x08 /* Private */,
+      14,    0,  526,    2, 0x08 /* Private */,
+      15,    0,  527,    2, 0x08 /* Private */,
+      16,    0,  528,    2, 0x08 /* Private */,
+      17,    0,  529,    2, 0x08 /* Private */,
+      18,    0,  530,    2, 0x08 /* Private */,
+      19,    0,  531,    2, 0x08 /* Private */,
+      20,    0,  532,    2, 0x08 /* Private */,
+      21,    0,  533,    2, 0x08 /* Private */,
+      22,    0,  534,    2, 0x08 /* Private */,
+      23,    0,  535,    2, 0x08 /* Private */,
+      24,    0,  536,    2, 0x08 /* Private */,
+      25,    0,  537,    2, 0x08 /* Private */,
+      26,    0,  538,    2, 0x08 /* Private */,
+      27,    0,  539,    2, 0x08 /* Private */,
+      28,    0,  540,    2, 0x08 /* Private */,
+      29,    0,  541,    2, 0x08 /* Private */,
+      30,    0,  542,    2, 0x08 /* Private */,
+      31,    0,  543,    2, 0x08 /* Private */,
+      32,    0,  544,    2, 0x08 /* Private */,
+      33,    0,  545,    2, 0x08 /* Private */,
+      34,    0,  546,    2, 0x08 /* Private */,
+      35,    0,  547,    2, 0x08 /* Private */,
+      36,    0,  548,    2, 0x08 /* Private */,
+      37,    0,  549,    2, 0x08 /* Private */,
+      38,    0,  550,    2, 0x08 /* Private */,
+      39,    0,  551,    2, 0x08 /* Private */,
+      40,    0,  552,    2, 0x08 /* Private */,
+      41,    0,  553,    2, 0x08 /* Private */,
+      42,    0,  554,    2, 0x08 /* Private */,
+      43,    0,  555,    2, 0x08 /* Private */,
+      44,    0,  556,    2, 0x08 /* Private */,
+      45,    0,  557,    2, 0x08 /* Private */,
+      46,    0,  558,    2, 0x08 /* Private */,
+      47,    0,  559,    2, 0x08 /* Private */,
+      48,    0,  560,    2, 0x08 /* Private */,
+      49,    0,  561,    2, 0x08 /* Private */,
+      50,    0,  562,    2, 0x08 /* Private */,
+      51,    0,  563,    2, 0x08 /* Private */,
+      52,    0,  564,    2, 0x08 /* Private */,
+      53,    0,  565,    2, 0x08 /* Private */,
+      54,    0,  566,    2, 0x08 /* Private */,
+      55,    0,  567,    2, 0x08 /* Private */,
+      56,    0,  568,    2, 0x08 /* Private */,
+      57,    0,  569,    2, 0x08 /* Private */,
+      58,    0,  570,    2, 0x08 /* Private */,
+      59,    0,  571,    2, 0x08 /* Private */,
+      60,    0,  572,    2, 0x08 /* Private */,
+      61,    0,  573,    2, 0x08 /* Private */,
+      62,    0,  574,    2, 0x08 /* Private */,
+      63,    0,  575,    2, 0x08 /* Private */,
+      64,    0,  576,    2, 0x08 /* Private */,
+      65,    0,  577,    2, 0x08 /* Private */,
+      66,    0,  578,    2, 0x08 /* Private */,
+      67,    0,  579,    2, 0x08 /* Private */,
+      68,    0,  580,    2, 0x08 /* Private */,
+      69,    0,  581,    2, 0x08 /* Private */,
+      70,    0,  582,    2, 0x08 /* Private */,
+      71,    0,  583,    2, 0x08 /* Private */,
+      72,    0,  584,    2, 0x08 /* Private */,
+      73,    0,  585,    2, 0x08 /* Private */,
+      74,    0,  586,    2, 0x08 /* Private */,
+      75,    0,  587,    2, 0x08 /* Private */,
+      76,    0,  588,    2, 0x08 /* Private */,
+      77,    0,  589,    2, 0x08 /* Private */,
+      78,    0,  590,    2, 0x08 /* Private */,
+      79,    0,  591,    2, 0x08 /* Private */,
+      80,    0,  592,    2, 0x08 /* Private */,
+      81,    0,  593,    2, 0x08 /* Private */,
+      82,    0,  594,    2, 0x08 /* Private */,
+      83,    0,  595,    2, 0x08 /* Private */,
+      84,    0,  596,    2, 0x08 /* Private */,
+      85,    0,  597,    2, 0x08 /* Private */,
+      86,    0,  598,    2, 0x08 /* Private */,
+      87,    0,  599,    2, 0x08 /* Private */,
+      88,    0,  600,    2, 0x08 /* Private */,
+      89,    0,  601,    2, 0x08 /* Private */,
+      90,    0,  602,    2, 0x08 /* Private */,
+      91,    0,  603,    2, 0x08 /* Private */,
+      92,    0,  604,    2, 0x08 /* Private */,
+      93,    0,  605,    2, 0x08 /* Private */,
+      94,    0,  606,    2, 0x08 /* Private */,
+      95,    0,  607,    2, 0x08 /* Private */,
+      96,    0,  608,    2, 0x08 /* Private */,
+      97,    0,  609,    2, 0x08 /* Private */,
+      98,    0,  610,    2, 0x08 /* Private */,
+      99,    0,  611,    2, 0x08 /* Private */,
+     100,    0,  612,    2, 0x08 /* Private */,
+     101,    0,  613,    2, 0x08 /* Private */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+
+       0        // eod
+};
+
+void Config_Handler_test::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<Config_Handler_test *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->valid_serverfilepath(); break;
+        case 1: _t->Invalid_serverFilepath(); break;
+        case 2: _t->valid_kafkafilepath(); break;
+        case 3: _t->Invalid_kafkafilepath(); break;
+        case 4: _t->Logger_section_Missing(); break;
+        case 5: _t->Check_Log_Level_key_Missing(); break;
+        case 6: _t->Check_Log_Level_value_IsEmpty(); break;
+        case 7: _t->Check_Log_Level_value_is_String(); break;
+        case 8: _t->Check_Log_Level_value_is_float(); break;
+        case 9: _t->Check_Log_Level_value_is_double(); break;
+        case 10: _t->Check_Log_Level_value_is_negative(); break;
+        case 11: _t->Server_section_Missing(); break;
+        case 12: _t->Check_serverIp_key_Missing(); break;
+        case 13: _t->Check_serverPort_key_Missing(); break;
+        case 14: _t->Check_serverIp_value_is_Empty(); break;
+        case 15: _t->Check_serverIp_value_is_String(); break;
+        case 16: _t->Check_serverIp_value_is_Invalid_Host(); break;
+        case 17: _t->Chcek_serverIp_value_is_validHost_Zero(); break;
+        case 18: _t->Check_serverPort_value_is_Empty(); break;
+        case 19: _t->Check_serverPort_value_is_String(); break;
+        case 20: _t->Check_serverPort_value_is_float(); break;
+        case 21: _t->Check_serverPort_value_is_double(); break;
+        case 22: _t->Check_serverPort_Crossed_Max_TCPRange(); break;
+        case 23: _t->Check_serverPort_value_is_negative(); break;
+        case 24: _t->Test_section_Missing(); break;
+        case 25: _t->Check_RefreshRate_key_Missing(); break;
+        case 26: _t->Check_ChannelID_SamplingRate_key_Missing(); break;
+        case 27: _t->check_RefreshRate_value_isEmpty(); break;
+        case 28: _t->Check_RefreshRate_value_is_String(); break;
+        case 29: _t->Check_RefreshRate_value_is_float(); break;
+        case 30: _t->Check_RefreshRate_value_is_double(); break;
+        case 31: _t->Check_RefreshRate_Crossed_Max_Range(); break;
+        case 32: _t->Check_RefreshRate_value_is_negative(); break;
+        case 33: _t->Check_ChannelID_SamplingRate_isEmpty(); break;
+        case 34: _t->Check_ChannelID_SamplingRate_malformed(); break;
+        case 35: _t->Check_ChannelID_SamplingRate_isInvalid(); break;
+        case 36: _t->Check_ChannelID_SamplingRate_isFloat(); break;
+        case 37: _t->Kafka_section_Missing(); break;
+        case 38: _t->Check_KafkaURL_key_Missing(); break;
+        case 39: _t->Check_Serializer_key_Missing(); break;
+        case 40: _t->Check_NoOfAnalogTopic_key_Missing(); break;
+        case 41: _t->Check_NoOfDigitalTopic_key_Missing(); break;
+        case 42: _t->Check_KafkaURL_value_isEmpty(); break;
+        case 43: _t->Check_KafkaURL_value_isInvalidFormat(); break;
+        case 44: _t->Check_KafkaIP_value_isInvalidFormat(); break;
+        case 45: _t->Check_Kafka_Port_value_isFloat(); break;
+        case 46: _t->Check_Kafka_port_value_isDouble(); break;
+        case 47: _t->Check_Kafka_port_value_isNegative(); break;
+        case 48: _t->Check_Kafka_port_value_isCrossed_Max(); break;
+        case 49: _t->Check_Kafka_port_value_isInvalid_Chars(); break;
+        case 50: _t->Check_Serializer_value_isEmpty(); break;
+        case 51: _t->Check_Serializer_value_isNumeric(); break;
+        case 52: _t->Check_Serializer_value_containsSPCHAR(); break;
+        case 53: _t->Check_Serializer_Value_isNot_Expected(); break;
+        case 54: _t->Check_NoOfAnalogtopic_value_isEmpty(); break;
+        case 55: _t->Check_NoOfAnalogtopic_value_isString(); break;
+        case 56: _t->Check_NoOfAnalogtopic_value_isFloat(); break;
+        case 57: _t->Check_NoOfAnalogtopic_value_isDouble(); break;
+        case 58: _t->Check_NoOfAnalogtopic_value_crossedMax(); break;
+        case 59: _t->Check_NoOfAnalogtopic_value_isNegative(); break;
+        case 60: _t->Check_NoOfDigitalTopic_value_isEmpty(); break;
+        case 61: _t->Check_NoOfDigitalTopic_value_isString(); break;
+        case 62: _t->Check_NoOfDigitalTopic_value_isFloat(); break;
+        case 63: _t->Check_NoOfDigitalTopic_value_isDouble(); break;
+        case 64: _t->Check_NoOfDigitalTopic_value_crossedMax(); break;
+        case 65: _t->Check_NoOfDigitalTopic_value_isNegative(); break;
+        case 66: _t->Communication_topic_section_Missing(); break;
+        case 67: _t->check_Topic_name_key_Missing(); break;
+        case 68: _t->check_Serializer_key_Missing(); break;
+        case 69: _t->check_DeSerializer_key_Missing(); break;
+        case 70: _t->Check_Topic_Name_value_isEmpty(); break;
+        case 71: _t->Check_Topic_Name_value_isInvalid(); break;
+        case 72: _t->Check_Topic_Name_value_isNumeric(); break;
+        case 73: _t->Check_COMM_Serializer_value_isEmpty(); break;
+        case 74: _t->Check_COMM_Serializer_value_isInvalid(); break;
+        case 75: _t->Check_COMM_Serializer_value_isNumeric(); break;
+        case 76: _t->Check_COMM_DeSerializer_value_isEmpty(); break;
+        case 77: _t->Check_COMM_DeSerializer_value_isInvalid(); break;
+        case 78: _t->Check_COMM_DeSerializer_value_isNumeric(); break;
+        case 79: _t->Missing_Analog_Topic_section(); break;
+        case 80: _t->Check_Topic_Name_key_Missing(); break;
+        case 81: _t->Check_MinSampling_key_Missing(); break;
+        case 82: _t->Check_MaxSampling_key_Missing(); break;
+        case 83: _t->Check_AnalogTopicName_value_isEmpty(); break;
+        case 84: _t->Check_AnalogMinSample_value_isEmpty(); break;
+        case 85: _t->Check_AnalogMaxSample_value_isEmpty(); break;
+        case 86: _t->Check_AnalogTopic_Name_isInvlaid(); break;
+        case 87: _t->Check_AnalogMinSample_Limitation(); break;
+        case 88: _t->Check_AnalogMaxSample_Limitation(); break;
+        case 89: _t->Check_AnalogMaxsample_lessThan_Minsample(); break;
+        case 90: _t->Check_AnalogMinSample_isNegative(); break;
+        case 91: _t->Check_AnalogMaxSample_isNegative(); break;
+        case 92: _t->Missing_Digital_Topic_section(); break;
+        case 93: _t->Check_DigitalTopic_Name_key_Missing(); break;
+        case 94: _t->Check_SamplingRate_key_Missing(); break;
+        case 95: _t->Check_DigitalTopicName_value_isEmpty(); break;
+        case 96: _t->Check_SamplingRate_value_isEmpty(); break;
+        case 97: _t->Check_DigitalTopic_Name_isInvlaid(); break;
+        case 98: _t->Check_DigitalSample_Limitation(); break;
+        case 99: _t->Check_DigitalSample_isNegative(); break;
+        default: ;
+        }
+    }
+    Q_UNUSED(_a);
+}
+
+QT_INIT_METAOBJECT const QMetaObject Config_Handler_test::staticMetaObject = { {
+    &QObject::staticMetaObject,
+    qt_meta_stringdata_Config_Handler_test.data,
+    qt_meta_data_Config_Handler_test,
+    qt_static_metacall,
+    nullptr,
+    nullptr
+} };
+
+
+const QMetaObject *Config_Handler_test::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *Config_Handler_test::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_Config_Handler_test.stringdata0))
+        return static_cast<void*>(this);
+    return QObject::qt_metacast(_clname);
+}
+
+int Config_Handler_test::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 100)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 100;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 100)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 100;
+    }
+    return _id;
+}
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE

@@ -63,13 +63,14 @@ void Data_Segmentation_Handler::Data_Segmentation_Thread(){
     qDebug() << "Data segmentation thread is waiting for AcqFlag...";
 
     // Wait until AcqFlag is 1
-    //      {
-    //          QMutexLocker locker(&config->getInstance().acqMutex);
-    //          while (config->getInstance().getAcqFlag() == 0) {
-    //              config->getInstance().acqCondition.wait(&config->getInstance().acqMutex);
-    //          }
-    //      }
+//          {
+//              QMutexLocker locker(&config->getInstance().acqMutex);
+//              while (config->getInstance().getAcqFlag() == 0) {
+//                  config->getInstance().acqCondition.wait(&config->getInstance().acqMutex);
+//              }
+//          }
 
+    qDebug() << "Data segmentation thread is received start acqFlag...";
 
     while (true) {
 

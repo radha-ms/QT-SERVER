@@ -31,11 +31,11 @@
 Data_Receiver_Handler::Data_Receiver_Handler(QHostAddress IP, quint32 port, LockFreeQueue<QByteArray> *queue, QObject *parent)
     : QObject (parent), DedicatedIp(IP), DedicatedPort(port), pre_SegmentationQueue(queue){
 
-    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate1ms);
-    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate10ms);
-    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate50ms);
-    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate100ms);
-    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate1sec);
+//    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate1ms);
+//    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate10ms);
+//    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate50ms);
+//    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate100ms);
+//    QtConcurrent::run(this, &Data_Receiver_Handler::dataGenerate1sec);
 
 
 }
@@ -53,98 +53,98 @@ Data_Receiver_Handler::Data_Receiver_Handler(QHostAddress IP, quint32 port, Lock
  *          If the client is disconnected log the error and exit.
  */
 /***************************************************IMPORTANT*********************************************************************/
-//void Data_Receiver_Handler::Data_Receiver_Thread() {
-//    QTcpServer server;
+void Data_Receiver_Handler::Data_Receiver_Thread() {
+    QTcpServer server;
 
 
-//    // Regular expression for strict IPv4 format validation
-//    QRegularExpression ipv4Strict(R"(^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$)");
+    // Regular expression for strict IPv4 format validation
+    QRegularExpression ipv4Strict(R"(^(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}$)");
 
-//    if (DedicatedIp.toString().isEmpty() || !ipv4Strict.match(DedicatedIp.toString()).hasMatch()) {
-//        activityLog << "In client handler received IP address is invalid (bad format)";
-//        exit(0);
-//    }
+    if (DedicatedIp.toString().isEmpty() || !ipv4Strict.match(DedicatedIp.toString()).hasMatch()) {
+        activityLog << "In client handler received IP address is invalid (bad format)";
+        exit(0);
+    }
 
-//    // If passed format check, then try QHostAddress
-//    QHostAddress addr(DedicatedIp.toString());
-//    if (addr.isNull()) {
-//        activityLog << "In client handler received IP address is null";
-//        exit(0);
-//    }
+    // If passed format check, then try QHostAddress
+    QHostAddress addr(DedicatedIp.toString());
+    if (addr.isNull()) {
+        activityLog << "In client handler received IP address is null";
+        exit(0);
+    }
 
 
-//    QString Dport = QString::number(DedicatedPort);
-//    // Check if value is a valid integer (not float or non-numeric)
-//    bool isInt1 = false;
-//    Dport.toInt(&isInt1);
-//    if (!isInt1) {
-//        activityLog << "In Data_Receiver_Thread received tcp socket port for client: dedicatedPort must be an integer value, actual: " << DedicatedPort;
-//        exit(0);
-//    }
+    QString Dport = QString::number(DedicatedPort);
+    // Check if value is a valid integer (not float or non-numeric)
+    bool isInt1 = false;
+    Dport.toInt(&isInt1);
+    if (!isInt1) {
+        activityLog << "In Data_Receiver_Thread received tcp socket port for client: dedicatedPort must be an integer value, actual: " << DedicatedPort;
+        exit(0);
+    }
 
-//    // check Detect clearly invalid types like alphabets-only strings
-//    if (Dport.contains(QRegularExpression("^[a-zA-Z\\s]+$"))) {
-//        activityLog << "In Data_Receiver_Thread received tcp socket port for client: dedicatedPort appears to be a non-numeric string: " << DedicatedPort;
-//        exit(0);
-//    }
+    // check Detect clearly invalid types like alphabets-only strings
+    if (Dport.contains(QRegularExpression("^[a-zA-Z\\s]+$"))) {
+        activityLog << "In Data_Receiver_Thread received tcp socket port for client: dedicatedPort appears to be a non-numeric string: " << DedicatedPort;
+        exit(0);
+    }
 
-//    if(DedicatedPort<=0 || DedicatedPort>65535 ){
-//        activityLog<<"In Data_Receiver_Thread received tcp socket port for client because port is Invalid";
-//        exit(0);
-//    }
+    if(DedicatedPort<=0 || DedicatedPort>65535 ){
+        activityLog<<"In Data_Receiver_Thread received tcp socket port for client because port is Invalid";
+        exit(0);
+    }
 
-//    qDebug() << "Trying to listen on DedicatedIp:" << DedicatedIp << "and port:" << DedicatedPort;
+    qDebug() << "Trying to listen on DedicatedIp:" << DedicatedIp << "and port:" << DedicatedPort;
 
-//   // if (!server.listen(DedicatedIp, DedicatedPort)) {
-//        if (!server.listen(QHostAddress::Any, DedicatedPort)) {
+   // if (!server.listen(DedicatedIp, DedicatedPort)) {
+        if (!server.listen(QHostAddress::Any, DedicatedPort)) {
 
-//        qWarning() << "Failed to listen on" << DedicatedIp.toString() << ":" << DedicatedPort;
-//        return;
-//    }
-////listen(QHostAddress::Any, serverPort)
+        qWarning() << "Failed to listen on" << DedicatedIp.toString() << ":" << DedicatedPort;
+        return;
+    }
+//listen(QHostAddress::Any, serverPort)
 
-//    qDebug() << "Listening on" << DedicatedIp.toString() << ":" << DedicatedPort;
-//    activityLog << "Listening on" << DedicatedIp.toString() << ":" << DedicatedPort;
+    qDebug() << "Listening on" << DedicatedIp.toString() << ":" << DedicatedPort;
+    activityLog << "Listening on" << DedicatedIp.toString() << ":" << DedicatedPort;
 
-//    if (!server.waitForNewConnection(-1)) {
-//        qWarning() << "No incoming connection";
-//        return;
-//    }
+    if (!server.waitForNewConnection(-1)) {
+        qWarning() << "No incoming connection";
+        return;
+    }
 
-//    QTcpSocket *clientSocket = server.nextPendingConnection();
-//    if (!clientSocket) {
-//        qWarning() << "Failed to get client connection";
-//        return;
-//    }
+    QTcpSocket *clientSocket = server.nextPendingConnection();
+    if (!clientSocket) {
+        qWarning() << "Failed to get client connection";
+        return;
+    }
 
-//    qDebug() << "Client connected from" << clientSocket->peerAddress().toString();
-//    activityLog << "Client connected from" << clientSocket->peerAddress().toString();
+    qDebug() << "Client connected from" << clientSocket->peerAddress().toString();
+    activityLog << "Client connected from" << clientSocket->peerAddress().toString();
 
-//    while (clientSocket->state() == QAbstractSocket::ConnectedState) {
-//        if (!clientSocket->waitForReadyRead(-1)) {
-//            qWarning() << "Timeout or no data";
-//            continue;
-//        }
+    while (clientSocket->state() == QAbstractSocket::ConnectedState) {
+        if (!clientSocket->waitForReadyRead(-1)) {
+            qWarning() << "Timeout or no data";
+            continue;
+        }
 
-//        //Read all data from clientsocket and store in byteArray
-//        QByteArray buffer = clientSocket->readAll();
+        //Read all data from clientsocket and store in byteArray
+        QByteArray buffer = clientSocket->readAll();
 
-//        //check the buffer size
-//        if (!buffer.isEmpty()) {
-//            qDebug()<<"data received form client "<<buffer.size();
+        //check the buffer size
+        if (!buffer.isEmpty()) {
+            qDebug()<<"data received form client "<<buffer.size();
 
-//            //enqueue received byteArray into the pre-segmentation queue
-//            pre_SegmentationQueue->enQueue(buffer);
-//          //  qDebug()<<"iam at receiver Handler Nd presegQUEue is "<<pre_SegmentationQueue;
-//        }
-//    }
+            //enqueue received byteArray into the pre-segmentation queue
+            pre_SegmentationQueue->enQueue(buffer);
+          //  qDebug()<<"iam at receiver Handler Nd presegQUEue is "<<pre_SegmentationQueue;
+        }
+    }
 
-//    qDebug()<<"client is disconnected "<<clientSocket->peerPort() <<clientSocket->peerAddress().toString();
-//    activityLog <<"client dedicated tcp seocket is disconnected "<<clientSocket->peerPort() <<clientSocket->peerAddress().toString();
-//    clientSocket->close();
-//    clientSocket->deleteLater();
+    qDebug()<<"client is disconnected "<<clientSocket->peerPort() <<clientSocket->peerAddress().toString();
+    activityLog <<"client dedicated tcp seocket is disconnected "<<clientSocket->peerPort() <<clientSocket->peerAddress().toString();
+    clientSocket->close();
+    clientSocket->deleteLater();
 
-//}
+}
 
 //Queue_Manager<QByteArray> *queue = new Queue_Manager<QByteArray>();
 LockFreeQueue<QByteArray> *queue = new LockFreeQueue<QByteArray>();
@@ -358,21 +358,21 @@ void Data_Receiver_Handler::dataGenerate1sec() {
     }
 }
 
-// This thread keeps running and moves data from internal queue to preSegmentation queue
-void Data_Receiver_Handler::Data_Receiver_Thread() {
-    qDebug() << "data receiver thread started";
+//// This thread keeps running and moves data from internal queue to preSegmentation queue
+//void Data_Receiver_Handler::Data_Receiver_Thread() {
+//    qDebug() << "data receiver thread started";
 
-    while (true) {
-        QByteArray buffer;
+//    while (true) {
+//        QByteArray buffer;
 
-        // Try to pop data from the queue
-        if (queue->deQueue(buffer)) {
-            // If successful, forward it to next stage (preSegmentation queue)
-            pre_SegmentationQueue->enQueue(buffer);
-            // qDebug() << "Buffer dequeued and passed to pre_segmentation";
-        } else {
-            // Sleep briefly to avoid tight loop if queue is empty
-            QThread::msleep(1);
-        }
-    }
-}
+//        // Try to pop data from the queue
+//        if (queue->deQueue(buffer)) {
+//            // If successful, forward it to next stage (preSegmentation queue)
+//            pre_SegmentationQueue->enQueue(buffer);
+//            // qDebug() << "Buffer dequeued and passed to pre_segmentation";
+//        } else {
+//            // Sleep briefly to avoid tight loop if queue is empty
+//            QThread::msleep(1);
+//        }
+//    }
+//}

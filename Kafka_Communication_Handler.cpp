@@ -286,21 +286,6 @@ void Kafka_Communication_Handler::kafka_Listener_Thread(){
                     //emit the signal an pass the jsonobject to the master class slot to further processing
                     emit receivedDataFromKafka(jsonObject);
 
-
-//                    QThread::msleep(10000);
-//                    QJsonObject json;
-//                    json["key"]=1000;
-//                    json["acquisitionFlag"]=0;
-//                    json["message"] = "hi";
-//                    UpdateSendDataToKafka(json);
-
-//                    QThread::msleep(5000);
-//                    QJsonObject json1;
-//                    json1["key"]=1000;
-//                    json1["acquisitionFlag"]=1;
-//                    json1["message"] = "hi";
-//                    UpdateSendDataToKafka(json1);
-
                 }else {
                     if(config->getInstance().getLogLevel()>LOGLEVELINFO)
                         activityLog<<"Cannot process the received data because application expects"
