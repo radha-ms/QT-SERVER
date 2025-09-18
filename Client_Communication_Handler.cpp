@@ -178,6 +178,8 @@ void Client_Communication_Handler::sendDataToAllClients(STATUS data)
             QDataStream out(&buffer, QIODevice::WriteOnly);
             out.setByteOrder(QDataStream::LittleEndian);  // Ensure little-endian byte order
 
+            data.startAcq=1;
+
             if(config->getLogLevel()>LOGLEVELINFO){
                 activityLog<<"data is sent to all clients";
                 // Log the data values for debugging purposes
@@ -196,6 +198,7 @@ void Client_Communication_Handler::sendDataToAllClients(STATUS data)
                 << data.startAcq
                 << data.dedicatedIp
                 << data.dedicatedPort;
+            qDebug()<<data.startAcq<<" data.startAcq";
 
             // Write the serialized buffer to the client socket
             client->write(buffer);

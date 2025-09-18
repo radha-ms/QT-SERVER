@@ -97,7 +97,7 @@ typedef struct{
     QHostAddress dedicatedIp;
     quint32 dedicatedPort;
 }STATUS;
-
+Q_DECLARE_METATYPE(STATUS)
 
 /**
   * @brief   Structure representing status Command.

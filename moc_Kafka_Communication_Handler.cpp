@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../DACS_Server_Application9july2025/DACS_Server_Application/Kafka_Communication_Handler.h"
+#include "Kafka_Communication_Handler.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
