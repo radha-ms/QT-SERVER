@@ -165,7 +165,7 @@ typedef struct{
 typedef struct{
     char channelType;
     int cardID;
-    quint64 timestamp;
+    qint64 timestamp;
     int counter;
     bool data[64];
 }DIGITAL_DATA; //81 bytes

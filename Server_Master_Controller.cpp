@@ -336,6 +336,10 @@ void Server_Master_Controller::UpdateSocketReceivedData(int Command){
         json["command"] = "Server and Clients are setup is ready waiting for Start ACQ";
         //Emit the signal to send Command to the kafka server
         emit sendDataToKafka(json);
+        //testing purpose to send startAcq to clients
+        STATUS data;
+        data.startAcq=1;
+        emit sendDataToSocket(data);
     }else if(Command == 0){
         QJsonObject json;
         json["key"] = 2000;

@@ -63,12 +63,12 @@ void Data_Segmentation_Handler::Data_Segmentation_Thread(){
     qDebug() << "Data segmentation thread is waiting for AcqFlag...";
 
     // Wait until AcqFlag is 1
-//          {
-//              QMutexLocker locker(&config->getInstance().acqMutex);
-//              while (config->getInstance().getAcqFlag() == 0) {
-//                  config->getInstance().acqCondition.wait(&config->getInstance().acqMutex);
-//              }
-//          }
+    //          {
+    //              QMutexLocker locker(&config->getInstance().acqMutex);
+    //              while (config->getInstance().getAcqFlag() == 0) {
+    //                  config->getInstance().acqCondition.wait(&config->getInstance().acqMutex);
+    //              }
+    //          }
 
     qDebug() << "Data segmentation thread is received start acqFlag...";
 
@@ -119,7 +119,7 @@ void Data_Segmentation_Handler::Data_Segmentation_Thread(){
                     if (packet.size() == sizeof(ANALOG_DATA)) {
                         memcpy(&analog, packet.constData(), sizeof(ANALOG_DATA));
 
-//                             qDebug() << "CHANNEL ID in seg:"<<analog.channelID;
+//                        qDebug() << "CHANNEL ID in seg:"<<analog.channelID;
                         //            qDebug() << "[Data segmentation] ANALOG_DATA deserialized successfully"<<analog.channelID;
 
 
@@ -152,7 +152,7 @@ void Data_Segmentation_Handler::Data_Segmentation_Thread(){
                                 // Now push dataMap to the bandWidthRangeQueue
                                 bandWidthRangeQueue->enQueue(dataMap);
 
-                                //                            qDebug()<<"analog send to kafka from sgment "<<analog.channelID <<bandWidthRangeQueue;
+//                                qDebug()<<"analog send to kafka from sgment "<<analog.channelID <<bandWidthRangeQueue;
 
                             } else {
                                 qDebug() << "Queue manager pointer is null!";
@@ -212,7 +212,7 @@ void Data_Segmentation_Handler::Data_Segmentation_Thread(){
                 //remove the only readed data from the buffer
                 buffer.remove(0, PACKET_SIZE);
                 //                qDebug() << "Remaining buffer size:" << buffer.size();
-            }
+            }QThread::msleep(1);
         }
 
     }
