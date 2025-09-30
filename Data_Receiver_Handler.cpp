@@ -131,7 +131,7 @@ void Data_Receiver_Handler::Data_Receiver_Thread() {
 
         //check the buffer size
         if (!buffer.isEmpty()) {
-            qDebug()<<"data received form client "<<buffer.size();
+//            qDebug()<<"data received form client "<<buffer.size();
 
             //enqueue received byteArray into the pre-segmentation queue
             pre_SegmentationQueue->enQueue(buffer);
